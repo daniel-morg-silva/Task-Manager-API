@@ -20,7 +20,7 @@ namespace Program
             app.MapGet("/tasks", async (TasksDb db) =>
                 await db.Tasks.ToListAsync());
             
-            app.MapGet("/tasks/complete", async (TasksDb db) => 
+            app.MapGet("/tasks/completed", async (TasksDb db) => 
                 await db.Tasks.Where(t => t.IsCompleted).ToListAsync());
 
             app.MapGet("/tasks/{id}", async (int id, TasksDb db) =>
